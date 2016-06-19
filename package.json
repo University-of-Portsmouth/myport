@@ -1,10 +1,9 @@
 {
   "name": "myport",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "WIP version of MyPort",
   "main": "index.js",
   "scripts": {
-    "postinstall": "git submodule update --init --recursive",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/University-of-Portsmouth/myport/issues"
   },
-  "homepage": "https://github.com/University-of-Portsmouth/myport"
+  "homepage": "https://github.com/University-of-Portsmouth/myport",
+  "dependencies": {
+    "styleguide": "git+https://github.com/University-of-Portsmouth/styleguide.git"
+  }
 }
