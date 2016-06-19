@@ -4,6 +4,7 @@
   "description": "WIP version of MyPort",
   "main": "index.js",
   "scripts": {
+    "start": "gulp",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,5 +20,12 @@
   "homepage": "https://github.com/University-of-Portsmouth/myport",
   "dependencies": {
     "styleguide": "git+https://github.com/University-of-Portsmouth/styleguide.git"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.1",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp": "^3.9.1"
   }
 }
