@@ -1,0 +1,21 @@
+{
+  "name": "myport",
+  "version": "1.0.0",
+  "description": "WIP version of MyPort",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "git submodule update --init --recursive",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/University-of-Portsmouth/myport.git"
+  },
+  "keywords": [],
+  "author": "Zac Colley <hi@zaccolley.com> (http://zaccolley.com/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/University-of-Portsmouth/myport/issues"
+  },
+  "homepage": "https://github.com/University-of-Portsmouth/myport"
+}
