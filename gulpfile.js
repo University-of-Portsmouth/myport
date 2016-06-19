@@ -5,6 +5,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
 var browserSync = require('browser-sync').create();
+var copy = require('gulp-copy');
 
 var stylesheets = [
   'source/**/*.scss',
@@ -38,8 +39,14 @@ gulp.task('serve', function() {
   gulp.watch('dest/**/*.html').on('change', browserSync.reload);
 });
 
+// copies images to styleguide
+gulp.task('copy-images', function(){
+  return gulp.src('./node_modules/styleguide/source/images/**/*')
+    .pipe(copy('dest', { prefix: 3 }));
+});
+
 // when running `gulp build` for a static build
-gulp.task('build', ['sass']);
+gulp.task('build', ['sass', 'copy-images']);
 
 // when running `gulp` to build, watch and re-build
 gulp.task('default', ['build', 'serve']);
