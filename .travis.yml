@@ -1,0 +1,24 @@
+language: node_js
+node_js:
+- 5.0.0
+sudo: false
+install:
+- travis_retry npm install
+script:
+- npm run build
+branches:
+ only:
+   - master
+deploy:
+  provider: s3
+  access_key_id: AKIAJBFLHTL5DRRZ6SOQ
+  secret_access_key:
+    secure: h+TxFnNaO6eq50DerDwD9uDQxIOb53aHagBfBUDHOg5qc6dOA+AuKL6XNW1eEwvcWhejpdsfiRp4wKdrHdtrE1VeZk6Je/vuhw2ZOQJq7uAqUuJoKaJMMiokXagys5FWdHtdR6GDkfzxmAxskIfKSJbfmFL3Kqjlk69c3D9BDWkGzTgM6mST0Mh0lQ3r8icmY8ddpwSS8Q4vEgt58rgjrWwKR1nOqFj3b5KIaZUTgmHCj6I0uuk08sLL2qifjZUp7jaZYQo6HPr7yZCh8gSxD6c1RFF/e+JtO6JX6VnN/kCEe8GDCXxmVNbDrILLawvC8lAeXVxg/P3q8Mneq0dYQmj13B44ouSMp7JjzijQcR5Mcc+zbBqexdixpjyhUOT0j6LzgMVWe6F6vdvybQ593GcdHpJKIOPiCkgpNx8BAtPxUTjwAWklIRiTxs/eiT1yRQNpEXgBjQuHp81C9Z+yjVR7u3oL7N8oM3KNXl9x+JEQ/Ajt6/8Jb1QmUBOi2IWCkiViWCk6czYmidgUSdmTuGrnsPNcdx0EXRnQaR5zGhueK/YUb474pFo3nEd3M5qMzy11JIK0RSoJ7LqVU8YNhc9X0U2AXxqJeTSMP0N/7CtZ8r9oRyaLlUoIXQ7+VaVWOxGCM8InOIuPsv9md/nK3W6P7yXq2XtDJL11IWh6Lj8=
+  bucket: myport.whealmedia.com
+  skip_cleanup: true
+  local-dir: dest
+  acl: "public_read"
+  region: eu-west-1
+  on:
+    repo: University-of-Portsmouth/myport
+    branch: master

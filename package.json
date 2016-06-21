@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "gulp",
+    "build": "gulp build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "engines": {
@@ -16,7 +17,6 @@
   },
   "keywords": [],
   "author": "Zac Colley <hi@zaccolley.com> (http://zaccolley.com/)",
-  "license": "ISC",
   "bugs": {
     "url": "https://github.com/University-of-Portsmouth/myport/issues"
   },
