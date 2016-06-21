@@ -15,6 +15,7 @@ deploy:
   secret_access_key:
     secure: PJ8u1O880/TooX+oPQv1bi+Dg9Z1RukAVVi5ao8LnNsUghddhfymKQugO1xg9pVDK5kJGNbgW3on1vfLGso9SQMf3nwKvPQG5r5ydL2Q/2sx93P38RmFDeZWEQvZS94KEGs+XloWefyFgLKe1tlaWHtZa++xs5OSF03VQvxFOrUwJ+xIujlMSgMhV/k+TSqyQ6b/g/jROPE+OUiQulyC69OeEv2UF6NW4pSK/3rvUaL55oSQXThZlG3i5FQw/QJSGFHB2njHAc3+MPpUJQmMkhVHe7pDZB0yBUZHt2alNkHalbky/8zGclG64hq00jIa0CcjGBWcBFKGLsI7EOvRvk3+Ue3eV81+Ljy1I/TTPQsElmyWkNKh9pEZ8x9QoK2pkSNFSYBjgfPGKeWbAkqvIbMs9uigEhzMvopQwTCAuUDsPIMzUWlkCDJTYfGQ2moUym5M+l6uqb/FLIGGe6Tpgx00Il+cK6pXd8GOLoTDG5+RF0nGxAVqyiI+DlsZ2fjxT/i+YSWfTovWyPIqSLgFnMbAzOjVjz3KS3TUZJ4sob0PFREcSrsAUeSBuDY5NKmlz9/MTlbXTuJ6emaQNLHD7t9IBgMw+/MkY8ofl9/ATr25LfGDP1IfBkujrI0AeNmQIuG3nkKge1VVoNH5kD371+zHz0KnNHFmgnY900JocXc=
   bucket: myport.whealmedia.com
+  skip_cleanup: true
   local-dir: dest
   acl: public_read
   region: eu-west-1
