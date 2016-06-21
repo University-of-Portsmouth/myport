@@ -2,3 +2,4 @@ node_modules
 
 dest/css
 dest/images
+.idea
