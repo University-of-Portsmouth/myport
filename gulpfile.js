@@ -45,8 +45,14 @@ gulp.task('copy-images', function(){
     .pipe(copy('dest', { prefix: 3 }));
 });
 
+// copies fonts to styleguide
+gulp.task('copy-fonts', function(){
+  return gulp.src('./node_modules/styleguide/source/fonts/**/*')
+      .pipe(copy('dest', { prefix: 3 }));
+});
+
 // when running `gulp build` for a static build
-gulp.task('build', ['sass', 'copy-images']);
+gulp.task('build', ['sass', 'copy-images', 'copy-fonts']);
 
 // when running `gulp` to build, watch and re-build
 gulp.task('default', ['build', 'serve']);
