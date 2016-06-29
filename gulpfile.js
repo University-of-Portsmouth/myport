@@ -36,6 +36,7 @@ gulp.task('serve', function() {
 
   // watch files and build/reload where needed
   gulp.watch(['source/**/*.scss', './node_modules/styleguide/source/**/*.scss'], ['sass']);
+  gulp.watch('./node_modules/styleguide/source/images/**/*', ['copy-images']);
   gulp.watch('dest/**/*.html').on('change', browserSync.reload);
 });
 
