@@ -35,7 +35,7 @@ gulp.task('serve', function() {
   browserSync.init({ server: 'dest' });
 
   // watch files and build/reload where needed
-  gulp.watch('source/**/*.scss', ['sass']);
+  gulp.watch(['source/**/*.scss', './node_modules/styleguide/source/**/*.scss'], ['sass']);
   gulp.watch('dest/**/*.html').on('change', browserSync.reload);
 });
 
