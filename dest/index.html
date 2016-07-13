@@ -8,19 +8,34 @@
   <link rel="stylesheet" href="/css/main.css" />
 </head>
 <body>
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-default" role="navigation">
   <div class="container">
     <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#uop-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        Menu
+      </button>
       <a class="navbar-brand logo logo-white" href="http://www.port.ac.uk"></a>
     </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UP605662@myport.ac.uk <span class="caret"></span></a>
-        <ul class="dropdown-menu">
+    <div class="collapse navbar-collapse" id="uop-navbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="hidden-sm hidden-md"><a href="#">My Details</a></li>
+        <li class="hidden-sm hidden-md"><a href="#">My Course</a></li>
+        <li class="hidden-sm"><a href="#">My Timetable</a></li>
+        <li><a href="#">My Assessments</a></li>
+        <li class="visible-xs"><a href="#">Sign out (UP605662@myport.ac.uk)</a></li>
+        <li class="dropdown hidden-xs">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">UP605662@myport.ac.uk <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="visible-sm visible-md"><a href="#">My Details</a></li>
+            <li class="visible-sm visible-md"><a href="#">My Course</a></li>
+            <li class="visible-sm"><a href="#">My Timetable</a></li>
+            <li role="separator" class="divider visible-sm visible-md"></li>
             <li><a href="#">Sign out</a></li>
-        </ul>
-      </li>
-    </ul>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
   </nav>
   <div class="jumbotron">
@@ -32,7 +47,7 @@
           <div class="input-group search-box">
             <input type="text" class="form-control" placeholder="Search for...">
             <span class="input-group-btn">
-                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                <button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-search"></span><span class="sr-only">Submit</span></button>
             </span>
           </div>
         </div>

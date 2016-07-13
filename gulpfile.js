@@ -30,7 +30,7 @@ var scripts = [
 	// bootstrapPath + 'javascripts/bootstrap/affix.js',
 	// bootstrapPath + 'javascripts/bootstrap/alert.js',
 	// bootstrapPath + 'javascripts/bootstrap/button.js',
-	// bootstrapPath + 'javascripts/bootstrap/collapse.js',
+	bootstrapPath + 'javascripts/bootstrap/collapse.js',
 	bootstrapPath + 'javascripts/bootstrap/dropdown.js',
 	// bootstrapPath + 'javascripts/bootstrap/modal.js',
 	// bootstrapPath + 'javascripts/bootstrap/popover.js',
