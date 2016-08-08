@@ -3,12 +3,19 @@
 }
 
 .building-image {
-  background-image: url('/images/park-building.svg');
-  height: 250px;
-  display: table-cell;
-  margin-bottom: -30px;
-  opacity: .28;
-  background-position: bottom center;
-  background-size: 85%;
-  background-repeat: no-repeat;
+  display: none;
+}
+
+@media (min-width: $screen-md-min) {
+  .building-image {
+    display: block;
+    background-image: url('/images/park-building.svg');
+    height: 250px;
+    display: table-cell;
+    margin-bottom: -30px;
+    opacity: .28;
+    background-position: bottom center;
+    background-size: 85%;
+    background-repeat: no-repeat;
+  }
 }
