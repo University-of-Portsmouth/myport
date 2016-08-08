@@ -1,3 +1,14 @@
 .welcome {
   margin-top: 20px;
 }
+
+.building-image {
+  background-image: url('/images/park-building.svg');
+  height: 250px;
+  display: table-cell;
+  margin-bottom: -30px;
+  opacity: .28;
+  background-position: bottom center;
+  background-size: 85%;
+  background-repeat: no-repeat;
+}
