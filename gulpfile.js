@@ -32,6 +32,7 @@ var scripts = [
 	// bootstrapPath + 'javascripts/bootstrap/button.js',
 	bootstrapPath + 'javascripts/bootstrap/collapse.js',
 	bootstrapPath + 'javascripts/bootstrap/dropdown.js',
+    'source/js/feeds.js',
 	// bootstrapPath + 'javascripts/bootstrap/modal.js',
 	// bootstrapPath + 'javascripts/bootstrap/popover.js',
 	// bootstrapPath + 'javascripts/bootstrap/scrollspy.js',
