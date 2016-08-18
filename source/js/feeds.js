@@ -72,7 +72,7 @@ $( document ).ready(function() {
      * Get the news feed
      */
     var getNewsFeed = function() {
-        $.get('/example-uop-news.json', function(newsFeed) {
+        $.get('/uop-news.json', function(newsFeed) {
             $('#panel-news').empty();
             var topNews = newsFeed.posts.slice(0, 3);
             for(var i = 0; i < topNews.length; i++){
@@ -91,6 +91,8 @@ $( document ).ready(function() {
                 var url = newsItem.url;
                 displayNewsItem(title, thumbnail, dateString, url);
             }
+        }).fail(function() {
+            $('#panel-news').empty().append('Error loading feed');
         });
     };
 
@@ -98,7 +100,7 @@ $( document ).ready(function() {
      * Get the events feed
      */
     var getEventsFeeds = function() {
-        $.get('/example-uop-events.json', function(eventsFeeds) {
+        $.get('/uop-events.json', function(eventsFeeds) {
             $('#panel-events').empty();
             var topEvents = eventsFeeds.posts.slice(0, 3);
             for(var i = 0; i < topEvents.length; i++){
@@ -133,9 +135,11 @@ $( document ).ready(function() {
                 }
 
                 var url = topEvent.url;
-                
+
                 displayEventItem(title, location, dateString, url);
             }
+        }).fail(function() {
+            $('#panel-events').empty().append('Error loading feed');
         });
     };
 
@@ -143,7 +147,7 @@ $( document ).ready(function() {
      * Get the participants needed feed
      */
     var getParticipantsFeed = function() {
-        $.get('/example-uop-participants.json', function(participantsFeed) {
+        $.get('/uop-participants.json', function(participantsFeed) {
             $('#panel-participants').empty();
             var topOpportunities = participantsFeed.posts.slice(0, 3);
             for(var i = 0; i < topOpportunities.length; i++){
@@ -165,6 +169,8 @@ $( document ).ready(function() {
                 var url = opportunity.url;
                 displayParticipants(title, department, thumbnail, url);
             }
+        }).fail(function() {
+            $('#panel-participants').empty().append('Error loading feed');
         });
     };
 
