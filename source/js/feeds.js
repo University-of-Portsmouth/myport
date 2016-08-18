@@ -72,7 +72,7 @@ $( document ).ready(function() {
      * Get the news feed
      */
     var getNewsFeed = function() {
-        $.get('/uop-news.json', function(newsFeed) {
+        $.get('/feeds/uop-news.json', function(newsFeed) {
             $('#panel-news').empty();
             var topNews = newsFeed.posts.slice(0, 3);
             for(var i = 0; i < topNews.length; i++){
@@ -100,7 +100,7 @@ $( document ).ready(function() {
      * Get the events feed
      */
     var getEventsFeeds = function() {
-        $.get('/uop-events.json', function(eventsFeeds) {
+        $.get('/feeds/uop-events.json', function(eventsFeeds) {
             $('#panel-events').empty();
             var topEvents = eventsFeeds.posts.slice(0, 3);
             for(var i = 0; i < topEvents.length; i++){
@@ -147,7 +147,7 @@ $( document ).ready(function() {
      * Get the participants needed feed
      */
     var getParticipantsFeed = function() {
-        $.get('/uop-participants.json', function(participantsFeed) {
+        $.get('/feeds/uop-participants.json', function(participantsFeed) {
             $('#panel-participants').empty();
             var topOpportunities = participantsFeed.posts.slice(0, 3);
             for(var i = 0; i < topOpportunities.length; i++){
