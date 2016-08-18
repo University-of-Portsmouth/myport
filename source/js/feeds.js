@@ -56,10 +56,12 @@ $( document ).ready(function() {
      *
      * @param title
      * @param department
+     * @param thumbnail
      * @param link
      */
-    var displayParticipants = function(title, department, link) {
-        var opportunityItem = '<a href="' + link + '" class="media"><div class="media-body">';
+    var displayParticipants = function(title, department, thumbnail, link) {
+        var opportunityItem = '<a href="' + link + '" class="media"><div class="media-left">';
+        opportunityItem += '<img class="media-object" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
         opportunityItem += '<h4 class="media-heading">' + title + '</h4>';
         opportunityItem += '<p class="media-date">' + department + '</p></div></a>';
 
@@ -131,7 +133,7 @@ $( document ).ready(function() {
                 }
 
                 var url = topEvent.url;
-
+                
                 displayEventItem(title, location, dateString, url);
             }
         });
@@ -152,8 +154,16 @@ $( document ).ready(function() {
                 if (opportunity.custom_fields.customdepartment.length > 0) {
                     department = opportunity.custom_fields.customdepartment[0];
                 }
+
+                var thumbnail = opportunity.thumbnail_images.medium.url;
+
+                //Use a placeholder thumbnail if none exists
+                if (thumbnail == '' || thumbnail === undefined) {
+                    thumbnail = '/images/placeholder/news.png';
+                }
+
                 var url = opportunity.url;
-                displayParticipants(title, department, url);
+                displayParticipants(title, department, thumbnail, url);
             }
         });
     };
