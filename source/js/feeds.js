@@ -1,7 +1,21 @@
 $( document ).ready(function() {
+
+    /**
+     * The calendar months
+     * @type {string[]}
+     */
     var monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
     ];
+
+    /**
+     * Add leading zero to dates
+     * @param n
+     * @returns {string}
+     */
+    var addLeadingZero = function(n) {
+        return (n < 10) ? ("0" + n) : n;
+    }
 
     /**
      * Display a news feed item
@@ -18,6 +32,38 @@ $( document ).ready(function() {
         newsItem += '<p class="media-date">' + date + '</p></div></a>';
 
         $('#panel-news').append(newsItem);
+    };
+
+    /**
+     * Display an event item
+     *
+     * @param title
+     * @param location
+     * @param date
+     * @param link
+     */
+    var displayEventItem = function(title, location, date, link) {
+        var eventItem = '<a href="' + link + '" class="media"><div class="media-body">';
+        eventItem += '<h4 class="media-heading">' + title + '</h4>';
+        eventItem += '<p class="media-date">' + date + '</p>';
+        eventItem += '<p class="media-location">' + location + '</p></div></a>';
+
+        $('#panel-events').append(eventItem);
+    };
+
+    /**
+     * Display a seeking participants item
+     *
+     * @param title
+     * @param department
+     * @param link
+     */
+    var displayParticipants = function(title, department, link) {
+        var opportunityItem = '<a href="' + link + '" class="media"><div class="media-body">';
+        opportunityItem += '<h4 class="media-heading">' + title + '</h4>';
+        opportunityItem += '<p class="media-date">' + department + '</p></div></a>';
+
+        $('#panel-participants').append(opportunityItem);
     };
 
     /**
@@ -46,5 +92,74 @@ $( document ).ready(function() {
         });
     };
 
+    /**
+     * Get the events feed
+     */
+    var getEventsFeeds = function() {
+        $.get('/example-uop-events.json', function(eventsFeeds) {
+            $('#panel-events').empty();
+            var topEvents = eventsFeeds.posts.slice(0, 3);
+            for(var i = 0; i < topEvents.length; i++){
+                var topEvent = topEvents[i];
+
+                var title = topEvent.title;
+
+                var location = topEvent.custom_fields.eventvenue;
+                if (location.length > 0) {
+                    location = location[0];
+                } else {
+                    location = '';
+                }
+
+                var startDate = topEvent.custom_fields.eventdate[0].split(/[- :]/);
+                startDate = new Date(Date.UTC(startDate[0], startDate[1]-1, startDate[2], startDate[3], startDate[4]));
+                var endDate = topEvent.custom_fields.eventdateend[0].split(/[- :]/);
+                endDate = new Date(Date.UTC(endDate[0], endDate[1]-1, endDate[2], endDate[3], endDate[4]));
+
+                var dateString = '';
+
+                //If on the event is on a single day
+                if (startDate.getUTCDate() == endDate.getUTCDate() && startDate.getMonth() == endDate.getMonth()) {
+                    dateString = startDate.getUTCDate() + " " + monthNames[startDate.getMonth()] + " " + startDate.getFullYear() +
+                        " - " + addLeadingZero(startDate.getHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until " +
+                        addLeadingZero(endDate.getHours()) + ":" + addLeadingZero(endDate.getMinutes());
+                } else {
+                    dateString = startDate.getUTCDate() + " " + monthNames[startDate.getMonth()] + " " + startDate.getFullYear() +
+                        " - " + addLeadingZero(startDate.getHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until </br>" +
+                        endDate.getUTCDate() + " " + monthNames[endDate.getMonth()] + " " + endDate.getFullYear() + " - " +
+                        addLeadingZero(endDate.getHours()) + ":" + addLeadingZero(endDate.getMinutes());
+                }
+
+                var url = topEvent.url;
+
+                displayEventItem(title, location, dateString, url);
+            }
+        });
+    };
+
+    /**
+     * Get the participants needed feed
+     */
+    var getParticipantsFeed = function() {
+        $.get('/example-uop-participants.json', function(participantsFeed) {
+            $('#panel-participants').empty();
+            var topOpportunities = participantsFeed.posts.slice(0, 3);
+            for(var i = 0; i < topOpportunities.length; i++){
+                var opportunity = topOpportunities[i];
+                var title = opportunity.title;
+
+                var department = '';
+                if (opportunity.custom_fields.customdepartment.length > 0) {
+                    department = opportunity.custom_fields.customdepartment[0];
+                }
+                var url = opportunity.url;
+                displayParticipants(title, department, url);
+            }
+        });
+    };
+
+    //Get the feeds
     getNewsFeed();
+    getEventsFeeds();
+    getParticipantsFeed();
 });
