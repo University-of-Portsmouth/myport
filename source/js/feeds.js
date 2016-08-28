@@ -27,7 +27,7 @@ $( document ).ready(function() {
      */
     var displayNewsItem = function(title, thumbnail, date, displayNewsItem) {
         var newsItem = '<a href="' + displayNewsItem + '" class="media"><div class="media-left">';
-        newsItem += '<img class="media-object" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
+        newsItem += '<img class="media-object" aria-hidden="true" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
         newsItem += '<h4 class="media-heading">' + title + '</h4>';
         newsItem += '<p class="media-date">' + date + '</p></div></a>';
 
@@ -61,7 +61,7 @@ $( document ).ready(function() {
      */
     var displayParticipants = function(title, department, thumbnail, link) {
         var opportunityItem = '<a href="' + link + '" class="media"><div class="media-left">';
-        opportunityItem += '<img class="media-object" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
+        opportunityItem += '<img class="media-object" aria-hidden="true" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
         opportunityItem += '<h4 class="media-heading">' + title + '</h4>';
         opportunityItem += '<p class="media-date">' + department + '</p></div></a>';
 
