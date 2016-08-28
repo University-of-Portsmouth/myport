@@ -26,6 +26,6 @@ after_success:
   - cd dest
   - git init
   - git add .
-  - git -c user.name='John Wheal' -c user.email='john@whealmedia.com' commit -m init
+  - git -c user.name='John Wheal' -c user.email='john@whealmedia.com' commit -m $TRAVIS_BUILD_NUMBER
   - git push -f -q https://johnwheal:$GITHUB_API_KEY@github.com/University-of-Portsmouth/myport-production.git master &2>/dev/null
   - cd ..
