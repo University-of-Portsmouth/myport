@@ -9,32 +9,32 @@
 </head>
 <body>
   <nav class="navbar navbar-default" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#uop-navbar" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        Menu
-      </button>
-      <a class="navbar-brand logo logo-white" href="http://www.port.ac.uk/"></a>
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#uop-navbar" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          Menu
+        </button>
+        <a class="navbar-brand logo logo-white" aria-label="University of Portsmouth Main Website" href="http://www.port.ac.uk/"></a>
+      </div>
+      <div class="collapse navbar-collapse" id="uop-navbar">
+        <ul class="nav navbar-nav navbar-right" role="navigation">
+          <li><a href="http://portal.myport.ac.uk/student/details/">My Details</a></li>
+          <li><a href="http://portal.myport.ac.uk/student/units/">My Course</a></li>
+          <li><a href="http://portal.myport.ac.uk/student/timetable/">My Timetable</a></li>
+          <li class="visible-xs"><a href="http://portal.myport.ac.uk/student/assessments/course-marks/">My Course Marks</a></li>
+          <li class="visible-xs"><a href="http://portal.myport.ac.uk/student/assessments/unit-marks/">My Unit Marks</a></li>
+          <li class="dropdown hidden-xs">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Assessments <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li role="separator" class="divider visible-sm visible-md"></li>
+              <li><a href="http://portal.myport.ac.uk/student/assessments/course-marks/">Course Marks</a></li>
+              <li><a href="http://portal.myport.ac.uk/student/assessments/unit-marks/">Unit Marks</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="collapse navbar-collapse" id="uop-navbar">
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="http://portal.myport.ac.uk/student/details/">My Details</a></li>
-        <li><a href="http://portal.myport.ac.uk/student/units/">My Course</a></li>
-        <li><a href="http://portal.myport.ac.uk/student/timetable/">My Timetable</a></li>
-        <li class="visible-xs"><a href="http://portal.myport.ac.uk/student/assessments/course-marks/">My Course Marks</a></li>
-        <li class="visible-xs"><a href="http://portal.myport.ac.uk/student/assessments/unit-marks/">My Unit Marks</a></li>
-        <li class="dropdown hidden-xs">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">My Assessments <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li role="separator" class="divider visible-sm visible-md"></li>
-            <li><a href="http://portal.myport.ac.uk/student/assessments/course-marks/">Course Marks</a></li>
-            <li><a href="http://portal.myport.ac.uk/student/assessments/unit-marks/">Unit Marks</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
   </nav>
   <div class="jumbotron">
     <div class="container">
@@ -42,34 +42,34 @@
         <div class="col-md-6 welcome">
           <h1>Welcome to MyPort</h1>
           <p>Helping you at the University of Portsmouth</p>
-          <form class="input-group search-box" method="get" action="https://kbr-portsmouthtest.kb.net/Search/GetSearch/12/4">
-            <input type="text" name="text" class="form-control" placeholder="Search for...">
+          <form class="input-group search-box" method="get" action="https://kbr-portsmouthtest.kb.net/Search/GetSearch/12/4" role="search">
+            <input type="text" name="text" class="form-control" required placeholder="Search for..." aria-label="Insert Search Term Here">
             <input type="hidden" value="1" id="widgetsearch" name ="widgetsearch">
             <span class="input-group-btn">
-                <button class="btn btn-primary" type="submit"><span class="glyphicon glyphicon-search"></span><span class="sr-only">Search</span></button>
+                <button class="btn btn-primary" role="button" type="submit" aria-label="Search Button"><span class="glyphicon glyphicon-search"></span><span class="sr-only">Search</span></button>
             </span>
           </form>
         </div>
         <div class="col-md-3 building-image"></div>
         <div class="col-md-3">
-          <div class="btn-group btn-group-vertical links" role="group" aria-label="...">
-            <a href="https://moodle.port.ac.uk/" class="btn link link--moodle">
+          <div class="btn-group btn-group-vertical links" role="navigation" aria-label="Links to Moodle and Google Services" role="navigation">
+            <a href="https://moodle.port.ac.uk/" role="link" class="btn link link--moodle">
               <span class="link-icon"></span>
               Moodle
             </a>
-            <a href="https://mail.google.com/" class="btn link link--google-mail">
+            <a href="https://mail.google.com/" role="link" class="btn link link--google-mail">
               <span class="link-icon"></span>
               Google Mail
             </a>
-            <a href="https://calendar.google.com/" class="btn link link--google-calendar">
+            <a href="https://calendar.google.com/" role="link" class="btn link link--google-calendar">
               <span class="link-icon"></span>
               Google Calendar
             </a>
-            <a href="https://drive.google.com/" class="btn link link--google-drive">
+            <a href="https://drive.google.com/" role="link" class="btn link link--google-drive">
               <span class="link-icon"></span>
               Google Drive
             </a>
-            <a href="https://keep.google.com/" class="btn link link--google-keep">
+            <a href="https://keep.google.com/" role="link" class="btn link link--google-keep">
               <span class="link-icon"></span>
               Google Keep
             </a>
@@ -83,89 +83,89 @@
       <section class="col-md-8">
         <div class="quick-links row">
           <h4>Popular Topics</h4>
-          <ul class="col-sm-6">
-            <li class="quick-link"><a href="http://www.port.ac.uk/library/">Library</a></li>
-            <li class="quick-link"><a href="http://www.referencing.port.ac.uk/">Referencing</a></li>
-            <li class="quick-link"><a href="http://ithelp.port.ac.uk/questions/194/Wireless+connection+guide">Connect to Uni WiFi</a></li>
+          <ul class="col-sm-6" role="navigation">
+            <li class="quick-link"><a href="http://www.port.ac.uk/library/" role="link">Library</a></li>
+            <li class="quick-link"><a href="http://www.referencing.port.ac.uk/" role="link">Referencing</a></li>
+            <li class="quick-link"><a href="http://ithelp.port.ac.uk/questions/194/Wireless+connection+guide" role="link">Connect to Uni WiFi</a></li>
           </ul>
-          <ul class="col-sm-6">
-            <li class="quick-link"><a href="http://www.port.ac.uk/graduation/">Graduation</a></li>
-            <li class="quick-link"><a href="http://www.port.ac.uk/departments/services/printingservices/">Printing services</a></li>
-            <li class="quick-link"><a href="http://www.port.ac.uk/careersandrecruitment/">Looking for a job?</a></li>
+          <ul class="col-sm-6" role="navigation">
+            <li class="quick-link"><a href="http://www.port.ac.uk/graduation/" role="link">Graduation</a></li>
+            <li class="quick-link"><a href="http://www.port.ac.uk/departments/services/printingservices/" role="link">Printing services</a></li>
+            <li class="quick-link"><a href="http://www.port.ac.uk/careersandrecruitment/" role="link">Looking for a job?</a></li>
           </ul>
         </div>
         <div class="icons">
           <div class="row">
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1000&title=Money&fromwidget=true&widgetsearch=1" class="icon icon--money">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1000&title=Money&fromwidget=true&widgetsearch=1" class="icon icon--money" role="link">
                 <span class="icon-image" aria-label="Money"></span>
-                <span class="icon-text">Money</span>
+                <span class="icon-text" aria-hidden="true">Money</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1001&title=University%20Admin&fromwidget=true&widgetsearch=1" class="icon icon--university-admin">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1001&title=University%20Admin&fromwidget=true&widgetsearch=1" class="icon icon--university-admin" role="link">
                 <span class="icon-image" aria-label="University Admin"></span>
-                <span class="icon-text">University Admin</span>
+                <span class="icon-text" aria-hidden="true">University Admin</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1003&title=International&fromwidget=true&widgetsearch=1" class="icon icon--international">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1003&title=International&fromwidget=true&widgetsearch=1" class="icon icon--international" role="link">
                 <span class="icon-image" aria-label="International"></span>
-                <span class="icon-text">International</span>
+                <span class="icon-text" aria-hidden="true">International</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1004&title=Library&fromwidget=true&widgetsearch=1" class="icon icon--library">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1004&title=Library&fromwidget=true&widgetsearch=1" class="icon icon--library" role="link">
                 <span class="icon-image" aria-label="Library"></span>
-                <span class="icon-text">Library</span>
+                <span class="icon-text" aria-hidden="true">Library</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1034&title=IT%20&%20Printing&fromwidget=true&widgetsearch=1" class="icon icon--it-printing">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1034&title=IT%20&%20Printing&fromwidget=true&widgetsearch=1" class="icon icon--it-printing" role="link">
                 <span class="icon-image" aria-label="IT & Printing"></span>
-                <span class="icon-text">IT &amp; Printing</span>
+                <span class="icon-text" aria-hidden="true">IT &amp; Printing</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1005&title=Learning%20Resources&fromwidget=true&widgetsearch=1" class="icon icon--learning-resources">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1005&title=Learning%20Resources&fromwidget=true&widgetsearch=1" class="icon icon--learning-resources" role="link">
                 <span class="icon-image" aria-label="Learning Resources"></span>
-                <span class="icon-text">Learning Resources</span>
+                <span class="icon-text" aria-hidden="true">Learning Resources</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1002&title=Health%20and%20Wellbeing&fromwidget=true&widgetsearch=1" class="icon icon--health-wellbeing">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1002&title=Health%20and%20Wellbeing&fromwidget=true&widgetsearch=1" class="icon icon--health-wellbeing" role="link">
                 <span class="icon-image" aria-label="Health & Wellbeing"></span>
-                <span class="icon-text">Health &amp; Wellbeing</span>
+                <span class="icon-text" aria-hidden="true">Health &amp; Wellbeing</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1006&title=Living%20in%20Portsmouth&fromwidget=true&widgetsearch=1" class="icon icon--living-in-portsmouth">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1006&title=Living%20in%20Portsmouth&fromwidget=true&widgetsearch=1" class="icon icon--living-in-portsmouth" role="link">
                 <span class="icon-image" aria-label="Living in Portsmouth"></span>
-                <span class="icon-text">Living in Portsmouth</span>
+                <span class="icon-text" aria-hidden="true">Living in Portsmouth</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1010&title=Careers%20&%20Employability&fromwidget=true&widgetsearch=1" class="icon icon--careers-employability">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1010&title=Careers%20&%20Employability&fromwidget=true&widgetsearch=1" class="icon icon--careers-employability" role="link">
                 <span class="icon-image" aria-label="Careers & Employability"></span>
-                <span class="icon-text">Careers &amp; Employability</span>
+                <span class="icon-text" aria-hidden="true">Careers &amp; Employability</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1009&title=Sports%20&%20Recreation&fromwidget=true&widgetsearch=1" class="icon icon--sports-recreation">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1009&title=Sports%20&%20Recreation&fromwidget=true&widgetsearch=1" class="icon icon--sports-recreation" role="link">
                 <span class="icon-image" aria-label="Sport & Recreation"></span>
-                <span class="icon-text">Sport &amp; Recreation</span>
+                <span class="icon-text" aria-hidden="true">Sport &amp; Recreation</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://www.upsu.net/" class="icon icon--union">
+              <a href="https://www.upsu.net/" class="icon icon--union" role="link">
                 <span class="icon-image" aria-label="The Students' Union"></span>
-                <span class="icon-text">The Students' Union</span>
+                <span class="icon-text" aria-hidden="true">The Students' Union</span>
               </a>
             </div>
             <div class="col-xs-6 col-sm-4">
-              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1008&title=Getting%20around&fromwidget=true&widgetsearch=1" class="icon icon--getting-around">
+              <a href="https://kbr-portsmouthtest.kb.net/search/getsearch/12/4?text=*&catid=1008&title=Getting%20around&fromwidget=true&widgetsearch=1" class="icon icon--getting-around" role="link">
                 <span class="icon-image" aria-label="Getting Around"></span>
-                <span class="icon-text">Getting Around</span>
+                <span class="icon-text" aria-hidden="true">Getting Around</span>
               </a>
             </div>
           </div>
@@ -174,7 +174,7 @@
       <section class="col-md-4">
         <div class="panel panel-secondary">
           <div class="panel-heading">
-            <h3 class="panel-title">News</h3>
+            <h3 class="panel-title" role="columnheader">News</h3>
           </div>
           <div class="panel-body" id="panel-news">
             Loading...
@@ -182,7 +182,7 @@
         </div>
         <div class="panel panel-secondary">
           <div class="panel-heading">
-            <h3 class="panel-title">Seeking Participants</h3>
+            <h3 class="panel-title" role="columnheader">Seeking Participants</h3>
           </div>
           <div class="panel-body" id="panel-participants">
             Loading...
@@ -190,7 +190,7 @@
         </div>
         <div class="panel panel-secondary">
           <div class="panel-heading">
-            <h3 class="panel-title">Events</h3>
+            <h3 class="panel-title" role="columnheader">Events</h3>
           </div>
           <div class="panel-body" id="panel-events">
             Loading...
