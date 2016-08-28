@@ -15,9 +15,7 @@ after_script:
   - cd dest
   - git init
   - git remote add origin https://github.com/University-of-Portsmouth/myport-production.git
-  - git rebase origin/master
-  - git add .
-  - git commit -m "New Deployment"
+  - git commit -a -m "New Deployment"
   - git push origin master
 deploy:
   provider: s3
