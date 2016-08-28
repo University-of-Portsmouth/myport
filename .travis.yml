@@ -10,11 +10,9 @@ branches:
   only:
   - master
 after_script:
-  - git config credential.helper "store --file=.git/credentials"
-  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
   - cd dest
   - git init
-  - git remote add origin https://github.com/University-of-Portsmouth/myport-production.git
+  - git remote add origin https://${GH_TOKEN}:github.com/University-of-Portsmouth/myport-production.git
   - git commit -a -m "New Deployment"
   - git push origin master
 deploy:
