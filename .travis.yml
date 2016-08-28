@@ -9,6 +9,16 @@ script:
 branches:
   only:
   - master
+after_script:
+  - git config credential.helper "store --file=.git/credentials"
+  - echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  - cd dest
+  - git init
+  - git remote add origin https://github.com/University-of-Portsmouth/myport-production.git
+  - git rebase origin/master
+  - git add .
+  - git commit -m "New Deployment"
+  - git push origin master
 deploy:
   provider: s3
   access_key_id: AKIAI4KLP2KKYK7MCM5Q
@@ -22,3 +32,6 @@ deploy:
   on:
     repo: University-of-Portsmouth/myport
     branch: master
+env:
+  global:
+    secure: AStTgXEhdV0NVrx4a00BRExlT7QtdohBz5fGKgwiS7l5FP98PJ1KIkh0oIpbDfN+TBy9eF4G8YPxYn69utCJMNhZOQEmeCnVF5vUHAmx16Z+gFO0d+8BTptbPycVNdh+az9tMRjBquaP+SWQjh3lvD7MOUYju0x/YTwME16L6WwTG1xhqQTEJdIyqUNN3/i4aR6nzY4xBQdNq1wjNXFxMh013L7yvYXpeFBx+uuIHoRQ67VTsGCn2A3uHDewoQL3HJZOjMhtTiIBmsFWXka4/sF56w9M0MtUsyV4xfj5DnlTIwmqpP95tuQdmlyR1VLbQRHVR8MQOr6Vs6aVkbYcKVP1hD/Ih6FE7ZWeGMoKESGaN3YPQCMogJ5uzPGMIHwJnxshrm7YdWHjfVKGgNUjLtyHUbjxz5eLcEuujr31VXraRNOyc7sNWKMtVfPFAU3K6R4KhR4rLCb2osVGqh81b738NyX2uGKzl7KG4V04YN0v8D9Wq+3jW5g6KM7zyi/UeuDAS4H3nEKJx078k3q/vnHkIgIuj3dKxTZdihE7OWfQUWlOcruZ7AMO4RlyTJ9GsJJFVEQYOc+XiDRLvBtlZVNN6sybSH/eldZ7hU/0VvpelwNopdd7QLTs5ZohGvvXjRSDjIJogziWzjt6nTKzLe523kfdNco4YCTjw7XzgSQ=
