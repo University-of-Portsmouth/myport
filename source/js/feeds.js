@@ -26,7 +26,7 @@ $( document ).ready(function() {
      * @param displayNewsItem
      */
     var displayNewsItem = function(title, thumbnail, date, displayNewsItem) {
-        var newsItem = '<a href="' + displayNewsItem + '" class="media"><div class="media-left">';
+        var newsItem = '<a href="' + displayNewsItem + '" class="media" target="_blank"><div class="media-left">';
         newsItem += '<img class="media-object" aria-hidden="true" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
         newsItem += '<h4 class="media-heading">' + title + '</h4>';
         newsItem += '<p class="media-date">' + date + '</p></div></a>';
@@ -43,7 +43,7 @@ $( document ).ready(function() {
      * @param link
      */
     var displayEventItem = function(title, location, date, link) {
-        var eventItem = '<a href="' + link + '" class="media"><div class="media-body">';
+        var eventItem = '<a href="' + link + '" class="media" target="_blank"><div class="media-body">';
         eventItem += '<h4 class="media-heading">' + title + '</h4>';
         eventItem += '<p class="media-date">' + date + '</p>';
         eventItem += '<p class="media-location">' + location + '</p></div></a>';
@@ -60,7 +60,7 @@ $( document ).ready(function() {
      * @param link
      */
     var displayParticipants = function(title, department, thumbnail, link) {
-        var opportunityItem = '<a href="' + link + '" class="media"><div class="media-left">';
+        var opportunityItem = '<a href="' + link + '" class="media" target="_blank"><div class="media-left">';
         opportunityItem += '<img class="media-object" aria-hidden="true" src="' + thumbnail + '" alt="' + title + '"></div><div class="media-body">';
         opportunityItem += '<h4 class="media-heading">' + title + '</h4>';
         opportunityItem += '<p class="media-date">' + department + '</p></div></a>';
