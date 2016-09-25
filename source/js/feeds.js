@@ -125,13 +125,13 @@ $( document ).ready(function() {
                 //If on the event is on a single day
                 if (startDate.getUTCDate() == endDate.getUTCDate() && startDate.getMonth() == endDate.getMonth()) {
                     dateString = startDate.getUTCDate() + " " + monthNames[startDate.getMonth()] + " " + startDate.getFullYear() +
-                        " - " + addLeadingZero(startDate.getHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until " +
-                        addLeadingZero(endDate.getHours()) + ":" + addLeadingZero(endDate.getMinutes());
+                        " - " + addLeadingZero(startDate.getUTCHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until " +
+                        addLeadingZero(endDate.getUTCHours()) + ":" + addLeadingZero(endDate.getMinutes());
                 } else {
                     dateString = startDate.getUTCDate() + " " + monthNames[startDate.getMonth()] + " " + startDate.getFullYear() +
-                        " - " + addLeadingZero(startDate.getHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until </br>" +
+                        " - " + addLeadingZero(startDate.getUTCHours()) + ":" + addLeadingZero(startDate.getMinutes()) + " until </br>" +
                         endDate.getUTCDate() + " " + monthNames[endDate.getMonth()] + " " + endDate.getFullYear() + " - " +
-                        addLeadingZero(endDate.getHours()) + ":" + addLeadingZero(endDate.getMinutes());
+                        addLeadingZero(endDate.getUTCHours()) + ":" + addLeadingZero(endDate.getMinutes());
                 }
 
                 var url = topEvent.url;
