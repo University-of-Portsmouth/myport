@@ -102,7 +102,8 @@ $( document ).ready(function() {
     var getEventsFeeds = function() {
         $.get('/feeds/uop-events.json', function(eventsFeeds) {
             $('#panel-events').empty();
-            var topEvents = eventsFeeds.posts.slice(0, 3);
+            var topEvents = eventsFeeds.posts.reverse();
+            var index = 0;
             for(var i = 0; i < topEvents.length; i++){
                 var topEvent = topEvents[i];
 
@@ -117,6 +118,16 @@ $( document ).ready(function() {
 
                 var startDate = topEvent.custom_fields.eventdate[0].split(/[- :]/);
                 startDate = new Date(Date.UTC(startDate[0], startDate[1]-1, startDate[2], startDate[3], startDate[4]));
+
+                //If the date is in the past
+                var now = new Date();
+                if (startDate < now) {
+                    continue;
+                }
+                index++;
+                if (index == 4) {
+                    break;
+                }
                 var endDate = topEvent.custom_fields.eventdateend[0].split(/[- :]/);
                 endDate = new Date(Date.UTC(endDate[0], endDate[1]-1, endDate[2], endDate[3], endDate[4]));
 
