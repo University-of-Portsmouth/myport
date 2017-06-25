@@ -1,5 +1,11 @@
 .welcome {
   margin-top: 10px;
+
+  h1 img {
+    display: inline-block;
+    height: $font-size-h1 - 10px;
+    margin-left: 5px;
+  }
 }
 
 .building-image {
