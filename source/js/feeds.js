@@ -104,6 +104,7 @@ $( document ).ready(function() {
             $('#panel-events').empty();
             var topEvents = eventsFeeds.posts.reverse();
             var index = 0;
+            var numEvents = 0;
             for(var i = 0; i < topEvents.length; i++){
                 var topEvent = topEvents[i];
 
@@ -118,6 +119,10 @@ $( document ).ready(function() {
 
                 var startDate = topEvent.custom_fields.eventdate[0].split(/[- :]/);
                 startDate = new Date(Date.UTC(startDate[0], startDate[1]-1, startDate[2], startDate[3], startDate[4]));
+
+                if (isNaN(startDate.getUTCDate())) {
+                    continue;
+                }
 
                 //If the date is in the past
                 var now = new Date();
@@ -148,6 +153,11 @@ $( document ).ready(function() {
                 var url = topEvent.url;
 
                 displayEventItem(title, location, dateString, url);
+                numEvents++;
+            }
+
+            if (numEvents == 0) {
+                $('#panel-events').append('<p>There are no upcoming events</p>');
             }
         }).fail(function() {
             $('#panel-events').empty().append('Error loading feed');
