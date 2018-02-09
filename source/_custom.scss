@@ -12,6 +12,10 @@
   display: none;
 }
 
+.alert-myport img {
+  max-width: 100%;
+}
+
 @media (min-width: $screen-md-min) {
   .building-image {
     display: block;
@@ -23,5 +27,15 @@
     background-position: bottom center;
     background-size: 85%;
     background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: $screen-sm-min) {
+  .alert-myport {
+    padding: 0;
+
+    .container {
+      padding: 0;
+    }
   }
 }
