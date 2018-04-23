@@ -1,10 +1,15 @@
 .welcome {
-  margin-top: 10px;
 
   h1 img {
     display: inline-block;
     height: $font-size-h1 - 10px;
     margin-left: 5px;
+  }
+
+  .information-hub {
+    height: auto;
+    width: 100%;
+    max-width: 300px;
   }
 }
 
@@ -20,7 +25,7 @@
   .building-image {
     display: block;
     background-image: url('/images/park-building.svg');
-    height: 250px;
+    height: 254px;
     display: table-cell;
     margin-bottom: -30px;
     opacity: .28;
