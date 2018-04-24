@@ -21,6 +21,12 @@
   max-width: 100%;
 }
 
+.information-hub {
+  p {
+    margin-left: 15px;
+  }
+}
+
 @media (min-width: $screen-md-min) {
   .building-image {
     display: block;
